@@ -1,0 +1,71 @@
+
+/* Import Fonts */
+
+@font-face {
+    font-family: 'AveriaLibre';
+    src: url("../fonts/AveriaLibre-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrancoisOne';
+    src: url("../fonts/FrancoisOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Remove user agent defaults*/
+body {
+    margin-left: 33vw;
+    margin-right: 33vw;
+    padding: 0;
+/*
+    max-width: 1024px;
+    min-width: 700px;
+*/
+  
+/*    Still some mystery padding beetween section divs, it will stay for this excercise...*/
+}
+.nav {
+    display: block;
+}
+
+/*Site title header*/
+h1 {
+    font-family: 'Averia Libre';
+    color: #724830;
+    margin: 0px;
+}
+#dogHeader {
+    max-width: 33vw;
+    margin: 0px;
+}
+
+/*CTA Header style*/
+h2 {
+    font-family: 'FrancoisOne';
+    color: #4056A1;
+    font-size: 2.5vw;
+    margin: 0px;
+}
+
+/*Paragraphy Style*/
+p {
+    font-family: sans-serif;
+    font-size: 1.8vh;
+  
+}
+/*set images in grid to stay within their containers*/
+#row1Image, #row2Image {
+    max-width: 80%;
+}
+
+/*Setup 2 column Grid for homepage*/
+.homeGrid {
+    display: grid;
+    grid-template-columns: 16vw 16vw;
+    text-overflow: ellipsis;
+    
+}
+

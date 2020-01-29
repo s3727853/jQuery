@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Healthy Canine Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Healthy Canine Company">
+  <meta name="author" content="Jack Edwards">
+    
+<!--    Linking to local style sheet-->
+    <link rel="stylesheet" href="css/style.css">
+    
+<!--Link to jQuery CDN (Google)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--Link to jQuery UI CDN (Google)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!--Simple fallback. If window.jQuery fails (due to no jQuery library) then we will use javascript to
+write in the script src for local jQuery library -->
+    <script>window.jQuery || document.write('<script src="js/jquery-3.4.1.min.js"><\/script>')</script>
+<!--Fallback for jQuery UI  -->
+    <script>window.jQuery.ui || document.write('<script src="js/jquery-ui.min.js"><\/script>')</script>
+    
+<!-- Script file for all javascript and jQuery code    -->
+    <script src="js/tools.js"></script> 
+    
+</head>
+
+<body>
+    <div class="nav">
+        <h1>The Healthy Canine Company</h1>
+        
+       
+    </div>
+    
+<!--    Homepage / Landing Page -->
+    
+    <div id="homepage" class="page">
+        
+<!--        Top image with mouseover effect. Need to experiment with this -->
+        <a href="#">
+        <img id="dogHeader" src="images/AdobeStock_40415982_Preview.jpeg" mouseover="this.src='images/AdobeStock_40415982_Preview-tilt.jpg'" onmouseout="this.src='images/AdobeStock_40415982_Preview.jpeg'" border="0" alt=""/></a>
+        
+        <h2>A Happy Dog Needs Healthy Food</h2>
+        
+        <div class="homeGrid">
+            <div><img src="images/AdobeStock_189472519_Preview.jpeg" id="row1Image"></div>
+            
+            <div><p>Nutrition is very important for your pets. Get your dog onto a healthy diet with our custom pet food creator.</p></div>
+            
+            <div><p>In the wild dogs eat a huge range of foods that are no longer available to them in a domestic enviroment.<br>Learn more about the benefits of canine nutrition</p></div>
+            
+            <div><img src="images/AdobeStock_260488996_Preview.jpeg" id="row2Image"></div>
+        </div>
+        
+    </div>
+    
+    <div id="foodcreator" class="page" style="display:none">
+        <h2>Food Creator</h2>
+        
+    </div>
+    
+    <div id="nutrition" class="page" style="display:none">
+        <h2>Nutrition</h2>
+    </div>
+    
+    <div id="about" class="page" style="display:none">
+        <h2>About</h2>
+    </div>
+    
+    <div id="contact" class="page" style="display:none">
+        <h2>Contact</h2>
+    </div>
+    
+<footer>
+  
+        <button id="home">Home</button>
+        <button id="foodcreatorShow">Food Creator</button>
+        <button id="nutritionShow">Nutrition</button>
+        <button id="aboutShow">About</button>
+        <button id="contactShow">Contact</button>
+    
+</footer> 
+</body>
+</html>
