@@ -15,12 +15,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--Link to jQuery UI CDN (Google)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+<!--Link to jQuery Vallidate CDN (jsdelivr)-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    
+  
+<!-- jQuery Drwasvg -->
+    <script src="js/jquery.drawsvg.min.js">
+    </script>
+    
+  
+    
 <!--Simple fallback. If window.jQuery fails (due to no jQuery library) then we will use javascript to
 write in the script src for local jQuery library -->
     <script>window.jQuery || document.write('<script src="js/jquery-3.4.1.min.js"><\/script>')</script>
 <!--Fallback for jQuery UI  -->
     <script>window.jQuery.ui || document.write('<script src="js/jquery-ui.min.js"><\/script>')</script>
+<!--Fallback for jQuery Validate  -->
+    <script>window.jQuery.validate || document.write('<script src="js/jquery.validate.min.js"><\/script>')</script>
     
 <!-- Script file for all javascript and jQuery code    -->
     <script src="js/tools.js"></script> 
@@ -29,27 +40,57 @@ write in the script src for local jQuery library -->
 
 <body>
     <div class="nav">
-        <h1>The Healthy Canine Company</h1>
+        <h1 id="bth">The Healthy Canine Company</h1>
+        
+
+<!--      Hammburger  -->
+           
+      <img class="hamburger" src="images/plus.png">
+     
         
        
     </div>
+    
+<!--This wrapper encompases all of the content below the header    -->
+<div class="wrapper"> 
+    
+    
+    <!-- Nav -->
+    <div id="myNav" class="overlay">
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+</div>
+    
     
 <!--    Homepage / Landing Page -->
     
     <div id="homepage" class="page">
         
-<!--        Top image with mouseover effect. Need to experiment with this -->
-        <a href="#">
-        <img id="dogHeader" src="images/AdobeStock_40415982_Preview.jpeg" mouseover="this.src='images/AdobeStock_40415982_Preview-tilt.jpg'" onmouseout="this.src='images/AdobeStock_40415982_Preview.jpeg'" border="0" alt=""/></a>
+<!--        Main homepage image -->
+      
+        <img id="dogHeader" src="images/AdobeStock_40415982_Preview.jpeg" alt=""/>
         
         <h2>A Happy Dog Needs Healthy Food</h2>
         
         <div class="homeGrid">
             <div><img src="images/AdobeStock_189472519_Preview.jpeg" id="row1Image"></div>
             
-            <div><p>Nutrition is very important for your pets. Get your dog onto a healthy diet with our custom pet food creator.</p></div>
+            <div><p>Nutrition is very important for your pets. Get your dog onto a healthy diet with our custom pet food creator.</p>
+                
+            <button id="foodLink" class="btnEfects">Food Creator</button>
+            </div>
             
-            <div><p>In the wild dogs eat a huge range of foods that are no longer available to them in a domestic enviroment.<br>Learn more about the benefits of canine nutrition</p></div>
+            <div><p>In the wild dogs eat a huge range of foods that are no longer available to them in a domestic enviroment.<br>Learn more about the benefits of canine nutrition</p>
+            
+                <button id="nutritionLink" class="btnEfects">Learn More</button>    
+            </div>
             
             <div><img src="images/AdobeStock_260488996_Preview.jpeg" id="row2Image"></div>
         </div>
@@ -57,12 +98,183 @@ write in the script src for local jQuery library -->
     </div>
     
     <div id="foodcreator" class="page" style="display:none">
-        <h2>Food Creator</h2>
         
+        
+     
+        
+        <div class="questionWrapper">
+            
+        
+                
+<!--                Multistep for for food creator -->
+            <form id="multistep">
+                    
+<!--                    Progress Bar -->
+                    
+            <ul id="progress">
+                <li class="active">Welcome</li>
+                <li>Pet Details</li>
+                <li>Pet Activity</li>
+                <li>Pet Diet</li>
+	       </ul>
+                
+<!--                    Content - Fieldsets-->
+                
+<!-- Step 1 - Welcome -->
+                
+            <fieldset>
+            <p>Welcome to the custom food creator. To find the perfect food for your dog we need to get to know them a little better.</p>
+            
+            <label>Please enter your dogs name</label><input type="text" name="dogName" id="petName" placeholder="Rover" />
+        
+            <input type="button" class="next" value="Next"/>
+                
+            </fieldset>
+                
+<!--Step 2 - Pet Details-->
+                
+        <fieldset>
+		<p class="appendName">Please tell us some more about </p>
+            
+        <div class="ui-widget">
+        <label for="tags">Breed</label>
+        <input id="tags" name="breed" placeholder="Wolfhound">
+        </div>
+   
+        <label>Age</label><select name="ageYears" class="ageYears gender" id="years">
+        <option class="placeholder" disabled selected value>Years</option>
+        </select>
+            
+            
+        <select name="ageMonths" class="ageMonths gender" id="months">
+        <option class="placeholder" disabled selected value>Months</option>
+        </select>
+            
+    
+        <label>Gender</label>    
+        <div class="checkbox">  
+		<input type="checkbox" name="male" id="male"><label for="male">Male</label>
+            
+        <input type="checkbox" name="female" id="female"><label for="female">Female</label>
+        
+            </div>  
+		<input type="button" class="next" value="Next"/>
+            
+	   </fieldset>
+           
+<!--Step 3 - Pet Activity
+-->
+        <fieldset>
+        <p>Pet Activity</p>
+            <label>Walks per week</label><select class="walks">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+            </select>
+            
+            
+            <label>Walk Duration</label>
+            <select class="time">
+            <option value="15">15 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="60">1 Hour</option>
+            <option value="61">1+ Hours</option>
+            </select>
+            <input type="button" class="next" value="Next"/>
+        </fieldset>
+                
+<!--Step 4 - Pet Diet-->
+                
+        <fieldset>
+        <p>Pet Diet<p>    
+        <label>Dry Food</label><input type="text"/> 
+        <label>Wet Food</label><input type="text"/> 
+        <label>Raw Meat</label><input type="text"/> 
+        <input type="button" class="finish" value="Next"/>
+        </fieldset>
+        
+                
+        
+                
+            </form>
+                
+        </div>
+        
+    </div>
+<!-- Step 5 - Final Product Page -->
+    
+    <div id="finalProduct" class="page" style="display: none">
+    
+    <img src="images/dogfood.jpg" id="foodBag"> 
+    
+      <p class="appendName">Based on the information we have gathered on </p>
+    <p>we have carefully selected the best product for their needs.</p>    
+        
+<!--Accodrian containing product info-->
+<!--    adapted from Vikas Verma, jQuery Accordian
+            https://codepen.io/vikasverma93/pen/raxGaM/ -->
+        
+        <div class="accordion-container">
+            
+  <h2>Product Information</h2>
+            
+  <div class="set">
+    <a href="#">
+      Description 
+      <img class="fa" src="images/plus.png">
+    </a>
+    <div class="content">
+      <p>This mix is made from sustainably sourced ingredients and is blended to create a nutritous complete food product for older dogs.</p>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      Ingredients
+      <img class="fa" src="images/plus.png">
+    </a>
+    <div class="content">
+      <p>Vegetable Base - 50%<br>Meat Mix - 40%<br>Binding Agent - 10%</p>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      Product Sizes
+      <img class="fa" src="images/plus.png">
+    </a>
+    <div class="content">
+      <p>This product is available in bags of 20KG, feeding instructions will come with the product customised for your dog</p>
+    </div>
+  </div>
+  <div class="set">
+    <a href="#">
+      Purchase 
+      <img class="fa" src="images/plus.png">
+    </a>
+    <div class="content">
+      <p>Buy now for the one time special of $140 per bag.<br><button>Buy Now (Placeholder)</button></p>
+    </div>
+  </div>
+</div>
+    
+        
+        
+        
+
+
+
+    
     </div>
     
     <div id="nutrition" class="page" style="display:none">
         <h2>Nutrition</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis lectus in nisl    tincidunt eleifend. Vivamus laoreet metus id elit tincidunt posuere. Sed pretium elementum    est, quis aliquet ligula euismod ut. Interdum et malesuada fames ac ante ipsum primis in</p>    
+                <p>
+                faucibus. Cras pellentesque mi quis nisl vulputate commodo ut vel libero. Maecenas varius    interdum orci eget dignissim. Pellentesque orci nulla, venenatis vel leo et, posuere   malesuada turpis.
+
+            Sed elementum erat risus. In eget bibendum orci, in malesuada magna. Fusce eget nibh et sapien iaculis convallis. Praesent tincidunt diam sit amet lectus sagittis malesuada. Praesent malesuada fringilla semper. Curabitur eget quam ipsum. Vestibulum magna quam, hendrerit bibendum viverra sit amet, dignissim at turpis. Aenean est massa, gravida tristique tempus nec, placerat vitae urna. Integer rhoncus eros id nulla consectetur, at vulputate ligula vestibulum. Pellentesque suscipit pellentesque eleifend. Vivamus nec dignissim turpis, vulputate vestibulum lectus. Fusce eleifend fringilla sem.
+        </p>
     </div>
     
     <div id="about" class="page" style="display:none">
@@ -73,13 +285,12 @@ write in the script src for local jQuery library -->
         <h2>Contact</h2>
     </div>
     
+    </div>  
 <footer>
-  
-        <button id="home">Home</button>
-        <button id="foodcreatorShow">Food Creator</button>
-        <button id="nutritionShow">Nutrition</button>
-        <button id="aboutShow">About</button>
-        <button id="contactShow">Contact</button>
+    
+    <div id="copyright">
+      This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright material not created by the author. All copyright material used remains copyright of the respective owners and has been used here pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without consent of the original copyright owners. See code comments for references.
+    </div>
     
 </footer> 
 </body>

@@ -15,18 +15,26 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cambay';
+    src: url("../fonts/Cambay-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 /* Remove user agent defaults*/
 body {
     margin-left: 33vw;
     margin-right: 33vw;
     padding: 0;
-/*
-    max-width: 1024px;
-    min-width: 700px;
-*/
-  
-/*    Still some mystery padding beetween section divs, it will stay for this excercise...*/
+
 }
+
+/*Site logo, let users know its clickable*/
+#bth {
+    cursor: grab;
+    text-align: center;
+}
+
 .nav {
     display: block;
 }
@@ -34,12 +42,14 @@ body {
 /*Site title header*/
 h1 {
     font-family: 'Averia Libre';
-    color: #724830;
+/*    color: #043927;*/
+    color: #0b6623;
     margin: 0px;
 }
 #dogHeader {
     max-width: 33vw;
     margin: 0px;
+    
 }
 
 /*CTA Header style*/
@@ -50,6 +60,19 @@ h2 {
     margin: 0px;
 }
 
+/*Give all page content panes a uniform max height/width. This is also ensures transition align properly*/
+.wrapper {
+    position: relative;
+    width: 34vw;
+    height: 70vh;
+    
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 /*Paragraphy Style*/
 p {
     font-family: sans-serif;
@@ -65,7 +88,427 @@ p {
 .homeGrid {
     display: grid;
     grid-template-columns: 16vw 16vw;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+
+
+/* Food Form setup*/
+
+
+/* Only show the first fieldset */
+
+#multistep fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/* Form display setup */
+#multistep {
+    width: 33vw;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+/* Fieldsets within form*/
+#multistep fieldset {
+    
+    background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	position: absolute;
+}
+#multistep input, #multistep textarea {
+/*    width: 10vw;*/
     
 }
 
+/* Progress bar made up of list items*/
+
+/*progress bar*/
+#progress {
+	margin-bottom: 3px;
+	overflow: hidden;
+	
+/*    CSS counter to count the list entries */
+	counter-reset: step;
+}
+
+/* Format the list entries*/
+#progress li {
+	list-style-type: none;
+	color: black;
+    font-family: "Cambay";
+	font-size: 15px;
+	width: 23%;
+	float: left;
+	position: relative;
+}
+
+/* Style the progress bar. Using CSS counter for every occurence of li and incrementing it*/
+#progress li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 25px;
+	line-height: 25px;
+	display: block;
+	font-size: 14px;
+	color: black;
+
+    background: white;
+
+    
+    /* 50% (Circle might look better... Play with colour.) */
+	border-radius: 5px;
+	margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progress li:after {
+	content: '';
+	width: 100%;
+	height: 4px;
+	background: grey;
+	position: absolute;
+	left: -50%;
+	top: 11px;
+/*    put bar behind the numbers*/
+	z-index: -1; 
+}
+
+/* We don't want connector bar before the first element*/
+#progress li:first-child:after {
+	content: none; 
+}
+
+/* Changing elements to active colour as we progress through them*/
+#progress li.active:before,  #progress li.active:after{
+	background: green;
+	color: white;
+}
+
+.questionbox {
+    width: 30vw;
+    height: 45vh;
+    
+}
+
+/*autocomplete dropdown styling*/
+.ui-autocomplete {
+    position: absolute;
+    border-color: black;
+    border-width: 1px;
+    border-style: inset;
+    border-radius: 3px;
+    
+    width: inherit;
+    
+    background-color: lightgray;
+    font-family: "Cambay";
+}
+
+/*form text*/
+
+#multistep p {
+    font-family: "Cambay";
+    font-size: 17px;
+}
+/*Form Labels*/
+#multistep label {
+    display: block;
+    font-family: "francoisOne";
+    margin: 3px;
+    padding: 5px;
+}
+
+/*Gender selection checkboxes*/
+#multistep .checkbox label {
+    display: inline;
+}
+
+/*Home page button effects*/
+
+.btnEfects {
+
+    color: black; 
+    background: transparent;
+    margin-left: 24%;
+    letter-spacing: 1px;
+    padding: 8px 10px; 
+    font: bold 16px 'Cambay', sans-serif; 
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s;
+    border-radius: 8px; 
+    box-shadow: inset 2px 2px 20px hsla(232, 91%, 68%, 0.69);
+    
+}
+
+/* Transitions*/
+
+.btnEfects:before, .btnEfects:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+/*Mouseover background colour*/
+  background: hsla(232, 91%, 68%, 0.69);
+  z-index: -1;
+/*Move element out of view        */
+  transform: translate3D(0,-100%,0);
+/*Ease out speed*/
+  transition: all 0.6s;
+}
+
+.btnEfects:after{
+  top: 0;
+  z-index: -1;
+/*Direction of transition*/
+  transform: translate3D(-101%,0,0);
+}
+
+.btnEfects:hover:after{
+  transform: translate3D(0,0,0);
+/*Ease in speed*/
+  transition: all 0.6s;
+}
+
+
+/*next button*/
+.next, .finish {
+    display: block;
+    margin-left: 42%; 
+    margin-top: 15px;
+    border-radius: 4px;
+    background-color: hsla(232, 91%, 68%, 1);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 80px;
+    padding: 5px;
+    cursor: pointer; 
+    font: 18px 'Cambay', sans-serif; 
+    letter-spacing: 2px;
+}
+
+.next:hover, finish:hover{
+    background-color: hsla(232, 91%, 68%, .9);
+    box-shadow: 1px 1px 2px grey;
+}
+
+
+
+
+/* Form entry elements*/
+input[type="text"], select, input {
+    margin: 5px;
+    padding: 10px;
+    border-style: hidden;
+    background-color: lightgray;
+    font-size: 15px;
+}
+#tags {
+    width: 70%;
+}
+#years, #months {
+    width: 35%;
+}
+#male, #female {
+    width: 10%;
+}
+
+
+#foodBag {
+    max-width: 50%;
+    margin: 0;
+    padding-left: 25%;
+    padding-top: 2vh;
+}
+/*Input validation class for invalid input*/
+.invalid {
+    background-color: red;
+}
+/*This class gets added beneath input elements that are invalid (jquery.validate plugin)*/
+.error {
+    color: red;
+    font-size: 14px;
+    font-family: "Cambay";
+}
+
+/* Hide a jQuery.ui element on autocomplete dropdown*/
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+/* Custom text margins for product page*/
+#finalProduct p {
+    padding: 0;
+    margin: 10px;
+    
+}
+
+
+
+/* Product screen accordian*/
+
+.accordion-container{
+    position: inline;
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+    
+}
+.accordion-container > h2{
+    padding-bottom: 8px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.set{
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+}
+.set > a{
+    font-family: "FrancoisOne";
+    letter-spacing: 3px;
+    display: block;
+    padding: 7px 10px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    transition:all 0.2s linear;
+}
+
+.set > a.active{
+/*Active accordion title background*/
+    background-color:#c24b35;
+    color: #fff;
+}
+.content{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display:none;
+}
+.content p{
+    font-family: "Cambay";
+    padding: 8px 10px;
+    margin: 0;
+    color: #333;
+}
+
+/* Using custom plus minus images on accordion, setting size and position*/
+.fa {
+    height: 14px;
+    padding-right: 6px;
+    position: absolute;
+    right: 0;
+}
+
+/* Icon animation for accordion*/
+.animate {
+    animation: pulse 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: once;
+}
+
+@keyframes pulse {
+    0%  { transform: scale(1.5); }
+    20% { transform: scale(1); }
+    40% { transform: scale(1.5); }
+    60% { transform: scale(1); }
+    80% { transform: scale(1.5); }
+    100%{ transform: scale(1); }
+}
+
+/* Nutrition info Page*/
+#nutrition h2 {
+    text-align: center;
+    padding-top: 2vh;
+}
+
+/* MENU*/
+
+
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
+
+
+/*Copyright info*/
+#copyright {
+    padding-top: 19vh;
+    font-size: 12px;
+}
