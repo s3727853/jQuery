@@ -10,229 +10,281 @@
     
 <!--    Linking to local style sheet-->
     <link rel="stylesheet" href="css/style.css">
+
     
 <!--Link to jQuery CDN (Google)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--Link to jQuery UI CDN (Google)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!--Link to jQuery Vallidate CDN (jsdelivr)-->
+    
+<!--Link to jQuery Validation CDN (jsdelivr)-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     
-  
-<!-- jQuery Drwasvg -->
-    <script src="js/jquery.drawsvg.min.js">
-    </script>
+<!-- jQuery Drawsvg -->
+    <script src="js/jquery.drawsvg.min.js"></script>
+<!--    Santos, Leonardo. “jQuery Drawsvg plugin.”
+	       http://leocs.me/jquery-drawsvg/-->
     
+<!--jQuery Interactive Image-->
+    <script src="js/interactive-image.min.js"></script>
+<!--    Linking to stylesheet for jQuery interactive image plugin -->
+    <link rel="stylesheet" href="css/interactive-image.css">
+<!--    Chateau, Jean-Philippe. “jQuery interactive image plugin.”
+            https://github.com/jpchateau/Interactive-Image/-->
+
   
-    
-<!--Simple fallback. If window.jQuery fails (due to no jQuery library) then we will use javascript to
-write in the script src for local jQuery library -->
+<!--Simple fallback. If window.jQuery fails (due to no jQuery library) then we will use javascript to write in the script src for local jQuery library -->
     <script>window.jQuery || document.write('<script src="js/jquery-3.4.1.min.js"><\/script>')</script>
+<!--    JS Foundation. jQuery Base version (jQuery Min version 3.4.1.)
+	       https://jquery.com/-->
+    
 <!--Fallback for jQuery UI  -->
     <script>window.jQuery.ui || document.write('<script src="js/jquery-ui.min.js"><\/script>')</script>
+<!--    jQuery UI Plugin. 
+            https://jqueryui.com/
+-->
+    
 <!--Fallback for jQuery Validate  -->
     <script>window.jQuery.validate || document.write('<script src="js/jquery.validate.min.js"><\/script>')</script>
     
 <!-- Script file for all javascript and jQuery code    -->
-    <script src="js/tools.js"></script> 
-    
+    <script src="js/tools.js"></script>    
 </head>
 
 <body>
     <div class="nav">
-        <h1 id="bth">The Healthy Canine Company</h1>
-        
-
-<!--      Hammburger  -->
-           
-      <img class="hamburger" src="images/plus.png">
-     
-        
-       
+        <h1 class="bth">The Healthy Canine Company</h1>
+        <!--      Hammburger  -->   
+        <img class="hamburger" src="images/menu.png" alt="Menu">
     </div>
     
 <!--This wrapper encompases all of the content below the header    -->
-<div class="wrapper"> 
-    
-    
+    <div class="wrapper"> 
     <!-- Nav -->
     <div id="myNav" class="overlay">
-
   <!-- Overlay content -->
-  <div class="overlay-content">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <div class="overlay-content">
+    
+             
+<!-- ========= SVG Code  + Anchors for menu =========-->
+<!--    Menu item 1 - About    -->
+    <a class="navAbout">  
+    <svg  viewBox="0 0 15.875 13.3" height="40" width="40">
+        <g transform="translate(0,-281.12497)" >
+        <ellipse ry="6.3355212" rx="6.4843497" cy="289.07901" cx="7.9374995" 
+        style="opacity:0.9;fill:#ffffff;fill-opacity:0.71111115;stroke:#000000;stroke-width:0.85630959;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <path d="m 7.9374999,293.03122 c 0,-5.29167 0,-5.29167 0,-5.29167" style="fill:none;stroke:#000000;stroke-width:1.32291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+        <path d="M 7.9374999,285.09372 Z" style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="m 7.9374999,285.09372 c 0,1.32292 0,1.32292 0,1.32292" style="fill:none;stroke:#000000;stroke-width:1.5875;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+        </g>
+    </svg>About</a>
+<!--    Menu Item 2 - Contact   -->
+    <a class="navContact">
+    <svg viewBox="0 0 17.875 10.875" height="40" width="40">
+        <g transform="translate(0,-281.12497)" >
+        <path  d="m 1.3229167,283.7708 v 0 l -10e-8,10.58334 H 14.552083 V 283.7708 Z" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 7.9374999,289.06247 H 6.6145833" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 7.9374999,289.06247 H 9.2604166 L 14.552083,283.7708" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 6.6145833,289.06247 1.3229166,283.7708" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+    </svg>Contact</a>
+<!--    Menu Item 3 - Nutrition -->
+    <a class="navNutrition">
+        <svg viewBox="0 0 17.875 11.875" height="40" width="40">
+        <g transform="translate(0,-281.12497)" >
+        <path d="m 2.6458333,282.44789 c 0,13.22916 0,13.22916 0,13.22916"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path  d="m 13.229167,282.44789 v 13.22916"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path  d="M 2.6458333,295.67705 H 13.229167"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 2.6458333,282.44789 H 13.229167"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+        <path d="m 3.96875,285.09372 c 7.9375,0 7.9375,0 7.9375,0"
+        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 10.583333,286.41664 H 3.96875"
+        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="m 3.96875,287.73955 h 6.614583"
+        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="M 10.583333,289.06247 H 3.96875"
+        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <circle r="1.984375" cy="292.99817" cx="5.7546873"
+        style="opacity:0.9;fill:#ffffff;fill-opacity:0.71111115;stroke:#000000;stroke-width:0.26511249;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <path d="m 4.9388889,292.99342 c 0.6173611,0.56697 0.6173611,0.56697 0.6173611,0.56697 l 1.2347222,-1.32292"
+        style="fill:none;stroke:#000000;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        </g>
+        </svg>Nutrition</a>
+<!--    Menu Item 4 - Home  -->
+    <a class="navHome">
+        <svg viewBox="0 0 15.875 15.875" height="40" width="40">
+        <g transform="translate(0,-281.12497)">
+        <path d="M 7.9374999,285.09372 Z"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="m 2.6458333,287.73955 v 7.9375 H 13.229167 l 0,-7.9375"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="m 7.9374999,283.7708 -6.6145833,4.7625"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path d="m 7.9374999,283.7708 6.6145831,4.7625"
+        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+        </svg>Home</a>
   </div>
-
 </div>
-    
-    
 <!--    Homepage / Landing Page -->
-    
     <div id="homepage" class="page">
-        
 <!--        Main homepage image -->
-      
-        <img id="dogHeader" src="images/AdobeStock_40415982_Preview.jpeg" alt=""/>
-        
+        <img id="dogHeader" src="images/AdobeStock_40415982_Preview.jpeg" alt="Group of dogs">
+<!--    Adobe Stock. “Group of twelve dogs.” ID#40415982.
+	       https://stock.adobe.com/au/images/group-of-twelve-dogs/40415982        -->
+
         <h2>A Happy Dog Needs Healthy Food</h2>
         
         <div class="homeGrid">
-            <div><img src="images/AdobeStock_189472519_Preview.jpeg" id="row1Image"></div>
+            <div>
+                <img src="images/189472519.png" id="row1Image" alt="White dog laying down">
+<!--            Adobe Stock. “The studio portrait of the puppy dog Australian Shepherd lying on the white background, looking at the copy space.” ID#189472519.
+	               https://stock.adobe.com/au/images/the-studio-portrait-of-the-puppy-dog-australian-shepherd-lying-on-the-white-background-looking-at-the-copy-space/189472519    -->
             
-            <div><p>Nutrition is very important for your pets. Get your dog onto a healthy diet with our custom pet food creator.</p>
+            </div>
+            <div>
+                <p id="rightPane">Nutrition important for your pets health. Get your dog onto a healthy diet with our custom pet food creator.</p>
+                <button id="foodLink" class="btnEfects">Food Creator</button>
+            </div>
+            <div>
+                <p id="leftPane">Learn more about the benefits of canine nutrition.</p>
+                <button id="nutritionLink" class="btnEfects" >Learn More</button>    
+            </div>
+            <div>
+                <img src="images/AdobeStock_260488996_Preview.jpeg" id="row2Image" alt="Dog with carrot in its mouth">
+<!--                Adobe Stock. “Cute dog holds a fresh carrot in the mouth, isolated against white” ID #260488996.
+                        https://stock.adobe.com/au/images/susser-hund-halt-eine-frische-karotte-im-mund-freigestellt-vor-weiss/260488996/.
+-->
                 
-            <button id="foodLink" class="btnEfects">Food Creator</button>
             </div>
-            
-            <div><p>In the wild dogs eat a huge range of foods that are no longer available to them in a domestic enviroment.<br>Learn more about the benefits of canine nutrition</p>
-            
-                <button id="nutritionLink" class="btnEfects">Learn More</button>    
-            </div>
-            
-            <div><img src="images/AdobeStock_260488996_Preview.jpeg" id="row2Image"></div>
         </div>
-        
     </div>
-    
+<!--    Food Creator -->
     <div id="foodcreator" class="page" style="display:none">
-        
-        
-     
-        
         <div class="questionWrapper">
-            
-        
-                
-<!--                Multistep for for food creator -->
-            <form id="multistep">
-                    
+<!--        Multistep form for food creator -->
+            <form id="multistep">        
 <!--                    Progress Bar -->
-                    
             <ul id="progress">
                 <li class="active">Welcome</li>
                 <li>Pet Details</li>
                 <li>Pet Activity</li>
                 <li>Pet Diet</li>
 	       </ul>
+<!--  Content - Fieldsets-->
                 
-<!--                    Content - Fieldsets-->
-                
-<!-- Step 1 - Welcome -->
-                
+<!-- Step 1 - Welcome -->          
             <fieldset>
-            <p>Welcome to the custom food creator. To find the perfect food for your dog we need to get to know them a little better.</p>
-            
-            <label>Please enter your dogs name</label><input type="text" name="dogName" id="petName" placeholder="Rover" />
-        
-            <input type="button" class="next" value="Next"/>
-                
+                <p>Welcome to the custom food creator. To find the perfect food for your dog we need to get to know them a little better.</p>
+                <label>Please enter your dogs name</label>
+                <input type="text" name="dogName" id="petName" placeholder="Rover" />
+                <input type="button" class="next" value="Next"/>
             </fieldset>
-                
 <!--Step 2 - Pet Details-->
                 
         <fieldset>
-		<p class="appendName">Please tell us some more about </p>
-            
-        <div class="ui-widget">
-        <label for="tags">Breed</label>
-        <input id="tags" name="breed" placeholder="Wolfhound">
-        </div>
-   
-        <label>Age</label><select name="ageYears" class="ageYears gender" id="years">
-        <option class="placeholder" disabled selected value>Years</option>
-        </select>
-            
-            
-        <select name="ageMonths" class="ageMonths gender" id="months">
-        <option class="placeholder" disabled selected value>Months</option>
-        </select>
-            
-    
-        <label>Gender</label>    
-        <div class="checkbox">  
-		<input type="checkbox" name="male" id="male"><label for="male">Male</label>
-            
-        <input type="checkbox" name="female" id="female"><label for="female">Female</label>
-        
+		  <p class="appendName">Please tell us some more about </p>
+            <div class="ui-widget">
+                <label for="tags">Breed</label>
+                <input id="tags" name="breed" placeholder="Wolfhound">
+            </div>
+            <label>Age</label>
+            <select name="ageYears" class="ageYears gender" id="years">
+                <option class="placeholder" disabled selected value>Years</option>
+            </select> 
+            <select name="ageMonths" class="ageMonths gender" id="months">
+                <option class="placeholder" disabled selected value>Months</option>
+            </select>
+            <label>Gender</label>    
+            <div class="checkbox">  
+                <input type="checkbox" name="male" id="male">
+                <label for="male">Male</label>
+                <input type="checkbox" name="female" id="female">
+                <label for="female">Female</label>
             </div>  
-		<input type="button" class="next" value="Next"/>
-            
+            <input type="button" class="next" value="Next"/>
 	   </fieldset>
            
-<!--Step 3 - Pet Activity
--->
+<!--Step 3 - Pet Activity -->
         <fieldset>
-        <p>Pet Activity</p>
-            <label>Walks per week</label><select class="walks">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5+</option>
+            <p>Pet Activity</p>
+            <label>Walks per week</label>
+            <select class="walks">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
             </select>
-            
-            
             <label>Walk Duration</label>
             <select class="time">
-            <option value="15">15 Minutes</option>
-            <option value="30">30 Minutes</option>
-            <option value="60">1 Hour</option>
-            <option value="61">1+ Hours</option>
+                <option value="15">15 Minutes</option>
+                <option value="30">30 Minutes</option>
+                <option value="60">1 Hour</option>
+                <option value="61">1+ Hours</option>
             </select>
             <input type="button" class="next" value="Next"/>
         </fieldset>
                 
-<!--Step 4 - Pet Diet-->
-                
+<!--Step 4 - Pet Diet-->    
         <fieldset>
-        <p>Pet Diet<p>    
-        <label>Dry Food</label><input type="text"/> 
-        <label>Wet Food</label><input type="text"/> 
-        <label>Raw Meat</label><input type="text"/> 
-        <input type="button" class="finish" value="Next"/>
-        </fieldset>
-        
+            <p>Please use the sliders below to tell us how many days a week your dog eats the following foods<p> 
+            <div class="sliderBox"> 
                 
-        
+                <label>Raw Meat</label>
+                <input type="range" min="0" max="7" value="4" class="slider" id="rawRange" oninput="outputMeat.value = rawRange.value">
+                <output id="outputMeat">4</output>
+                
+                <label>Dry Food</label>
+                <input type="range" min="0" max="7" value="4" class="slider" id="dryRange" oninput="outputDry.value = dryRange.value">
+                <output id="outputDry">4</output>
+    
+                <label>Wet Food </label>
+                <input type="range" min="0" max="7" value="4" class="slider" id="wetRange" oninput="outputWet.value = wetRange.value">
+                <output id="outputWet">4</output>
+            </div>    
+            <input type="button" class="finish" value="Next"/>
+        </fieldset>
                 
             </form>
-                
         </div>
-        
     </div>
 <!-- Step 5 - Final Product Page -->
     
     <div id="finalProduct" class="page" style="display: none">
-    
-    <img src="images/dogfood.jpg" id="foodBag"> 
-    
-      <p class="appendName">Based on the information we have gathered on </p>
+    <img src="images/dogfood.jpg" id="foodBag" alt="Bag of dog food"> 
+<!--      Adobe Stock. “Natural Raw organic dog food in bowl and dog's paws on white background. BARF dog diet.” ID#296416419
+            https://stock.adobe.com/au/images/natural-raw-organic-dog-food-in-bowl-and-dog-s-paws-on-white-background-barf-dog-diet/296416419
+
+        Shutter Stock. “Blank Foil Food Doy Pack, Doypack Stand Up Pouch Sachet Bag Packaging. Illustration Isolated On White Background. Mock Up, Mockup Template Ready For Your 
+            Design. Vector EPS10” https://www.shutterstock.com/image-vector/blank-foil-food-doy-pack-doypack-477930640
+  -->
+        
+    <p class="appendName">Based on the information we have gathered on </p>
     <p>we have carefully selected the best product for their needs.</p>    
         
 <!--Accodrian containing product info-->
 <!--    adapted from Vikas Verma, jQuery Accordian
             https://codepen.io/vikasverma93/pen/raxGaM/ -->
-        
-        <div class="accordion-container">
-            
-  <h2>Product Information</h2>
-            
-  <div class="set">
-    <a href="#">
-      Description 
-      <img class="fa" src="images/plus.png">
-    </a>
+    <div class="accordion-container">       
+        <h2>Product Information</h2>       
+    <div class="set">
+        <a href="#">
+            Description 
+        <img class="fa animate" src="images/plus.png" alt="Expand/Collapse section">
+        </a>
     <div class="content">
-      <p>This mix is made from sustainably sourced ingredients and is blended to create a nutritous complete food product for older dogs.</p>
+        <p>This mix is made from sustainably sourced ingredients and is blended to create a nutritous complete food product for older dogs.</p>
     </div>
   </div>
   <div class="set">
     <a href="#">
       Ingredients
-      <img class="fa" src="images/plus.png">
+      <img class="fa animate" src="images/plus.png" alt="Expand/Collapse section">
     </a>
     <div class="content">
       <p>Vegetable Base - 50%<br>Meat Mix - 40%<br>Binding Agent - 10%</p>
@@ -241,7 +293,7 @@ write in the script src for local jQuery library -->
   <div class="set">
     <a href="#">
       Product Sizes
-      <img class="fa" src="images/plus.png">
+      <img class="fa animate" src="images/plus.png" alt="Expand/Collapse section">
     </a>
     <div class="content">
       <p>This product is available in bags of 20KG, feeding instructions will come with the product customised for your dog</p>
@@ -250,48 +302,72 @@ write in the script src for local jQuery library -->
   <div class="set">
     <a href="#">
       Purchase 
-      <img class="fa" src="images/plus.png">
+      <img class="fa animate" src="images/plus.png" alt="Expand/Collapse section">
     </a>
     <div class="content">
       <p>Buy now for the one time special of $140 per bag.<br><button>Buy Now (Placeholder)</button></p>
     </div>
   </div>
 </div>
-    
+<button class="bth">Home</button>
+</div>
         
-        
-        
-
-
-
-    
-    </div>
-    
+<!--    Nutrition Page-->
     <div id="nutrition" class="page" style="display:none">
         <h2>Nutrition</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis lectus in nisl    tincidunt eleifend. Vivamus laoreet metus id elit tincidunt posuere. Sed pretium elementum    est, quis aliquet ligula euismod ut. Interdum et malesuada fames ac ante ipsum primis in</p>    
-                <p>
-                faucibus. Cras pellentesque mi quis nisl vulputate commodo ut vel libero. Maecenas varius    interdum orci eget dignissim. Pellentesque orci nulla, venenatis vel leo et, posuere   malesuada turpis.
-
-            Sed elementum erat risus. In eget bibendum orci, in malesuada magna. Fusce eget nibh et sapien iaculis convallis. Praesent tincidunt diam sit amet lectus sagittis malesuada. Praesent malesuada fringilla semper. Curabitur eget quam ipsum. Vestibulum magna quam, hendrerit bibendum viverra sit amet, dignissim at turpis. Aenean est massa, gravida tristique tempus nec, placerat vitae urna. Integer rhoncus eros id nulla consectetur, at vulputate ligula vestibulum. Pellentesque suscipit pellentesque eleifend. Vivamus nec dignissim turpis, vulputate vestibulum lectus. Fusce eleifend fringilla sem.
-        </p>
+        <p>Nutrition is important for all pets, mouseover Ralph below to learn more.</p>
+        <div class="interactive-image">
+    </div>
+        <button class="bth">Home</button>
     </div>
     
     <div id="about" class="page" style="display:none">
         <h2>About</h2>
+<!--        Image slider -->
+        <div id="slideContainer">
+            <ul id="slides">
+                <li style="background-image: url(images/gallery/273162497.jpeg);">
+                    <span>Created in 2019 Healthy Canine Co is passionate about dogs, and dog food. We believe all dogs deserve to live their best life.</span>
+<!--    Adobe Stock. “Pure youth crazy. English cocker spaniel young dog is posing. Cute playful white-braun doggy or pet is playing and looking happy isolated on white background.
+            Concept of motion, action, movement.” ID#273162497. https://stock.adobe.com/au/images/pure-youth-crazy-english-cocker-spaniel-young-dog-is-posing-cute-playful-white-braun-doggy-or-pet-is-playing-and-looking-happy-isolated-on-white-background-concept-of-motion-action-movement/273162497
+    -->
+                    
+                </li>
+                <li style="background-image: url(images/gallery/307282946.jpeg);">
+                    <span>To us nutrition is important, dogs come in all shapes and sizes with different lifestyles and activity needs. For this reason, there is no one size fits all food product</span>
+<!--   Adobe Stock. “Dog holds a bowl for food in his teeth. healthy food for pets. Border Collie on a white background.” ID#305306648
+	       https://stock.adobe.com/au/images/dog-holds-a-bowl-for-food-in-his-teeth-healthy-food-for-pets-border-collie-on-a-white-background/305306648    -->
+                    
+                </li>
+                <li style="background-image: url(images/gallery/305306648.jpeg);">
+                    <span>With help from leading vets and animal nutritionists we have gathered a team of like-minded people to make a positive change in the pet food industry.</span>
+<!--  Adobe Stock. “Dogs Peeking Eyes and Paws Over White Web Banner.” ID#307282946
+	       https://stock.adobe.com/au/images/dogs-peeking-eyes-and-paws-over-white-web-banner/307282946 -->
+                    
+                </li>
+            </ul>
+            <a href="#" id="btn-prev">
+                <img class="arrow" src="images/right.png" alt="Next arrow">
+            </a>
+            <a href="#" id="btn-next">
+                <img class="arrow" src="images/left.png" alt="Previous arrow">
+            </a>
+        <button class="bth">Home</button>
     </div>
+ </div>
     
+<!--    Contact Page        -->
     <div id="contact" class="page" style="display:none">
         <h2>Contact</h2>
+        <p>sent tincidunt diam sit amet lectus sagittis malesuada. Praesent malesuada fringilla semper. Curabitur eget quam ipsum. Vestibulum magna quam, hendrerit bibendum viverra sit amet, dignissim at turpis. Aenean est massa, gravida tristique tempus nec, placerat vitae urna. Integer rhoncus eros id nulla consecte</p>
+        <button class="bth">Home</button>
     </div>
-    
-    </div>  
+</div> 
+ 
 <footer>
-    
     <div id="copyright">
       This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright material not created by the author. All copyright material used remains copyright of the respective owners and has been used here pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without consent of the original copyright owners. See code comments for references.
     </div>
-    
 </footer> 
 </body>
 </html>
